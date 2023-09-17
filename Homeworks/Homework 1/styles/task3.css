@@ -1,0 +1,117 @@
+:root {
+    --def-padding: 10px 30px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body, html, h1, h2, p, ul, li {
+    margin: 0;
+}
+
+.btn-class {
+    border: unset;
+    padding: 50px;
+    border-radius: 20px;
+    padding: 3px 25px;
+}
+
+.btn-class:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: var(--def-padding);
+    border: 1px solid black;
+}
+
+.logo {
+    width: 25%;
+    text-align: center;
+}
+
+.menu {
+    width: 30%;
+}
+
+.btns {
+    width: 30%;
+    text-align: right;
+}
+
+.menu ul li {
+    display: inline-block;
+    margin-left: 35px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+}
+
+.products {
+    border: 1px solid black;
+    margin-top: 20px;
+    display: flex;
+}
+
+.about-pr {
+    width: 40%;
+    text-align: center;
+    padding: 100px 0px;
+}
+
+.about-pr h1 {
+    padding: var(--def-padding);
+}
+
+.about-pr p {
+    padding-bottom: 30px;
+}
+
+.section-f {
+    display: flex;
+    justify-content: center;
+}
+
+.box-one {
+    width: 20%;
+    padding: 10px;
+}
+
+.box {
+    border: 1px solid black;
+    padding: 60px;
+    background: springgreen;
+}
+
+.section-s {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.box-s {
+    border: 1px solid black;
+    padding: 100px 200px;
+    background: springgreen;
+    margin-right: 30px;
+}
+
+.side-text {
+    width: 30%;
+    
+}
+
+.side-text h2 {
+    margin-bottom: 10px;
+}
+
+.side-text p {
+    margin-bottom: 8px;
+}
