@@ -1,0 +1,22 @@
+.box {
+    height: 300px;
+    background: silver;
+    width: 30%;
+    float: left;
+}
+
+.box:nth-child(2){
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+@media (max-width: 1024px) {
+    .box:nth-child(2){
+        margin: 0;
+    }
+
+    .box {
+        width: 100%;
+        margin-bottom: 10px !important;
+    }
+}
