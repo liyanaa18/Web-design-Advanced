@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        Направете два бутона „Предишен“ и „Следващ“. 
+        Имаме три картинки, 
+        при натискане на бутона картинките се сменят.
+    -->
+    <div>
+        <img src="/images/1.jpg" id="img" style="width: 100%;" alt="">
+    </div>
+    <div>
+        <button onclick="changeImage('prev')">Previos</button>
+        <button onclick="changeImage('next')">Next</button>
+    </div>
+
+    <script>
+        let current = 1;
+
+        function changeImage(action) {
+            let img = document.getElementById('img')
+            if(action== 'next') {
+                current++;
+
+                if(current > 3) {
+                    current = 1;
+                }
+
+            } else {
+                current--;
+
+                if(current <= 0) {
+                    current = 3;
+                }
+            }
+
+            img.setAttribute('src', `/images/${current}.jpg`);
+        }
+
+        /*setInterval(function() {
+            changeImage('next');
+        }, 3000)*/
+
+    </script>
+</body>
+</html>

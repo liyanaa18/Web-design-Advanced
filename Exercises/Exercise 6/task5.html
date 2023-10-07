@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        Потребителя въвежда число в поле и натиска 
+        бутона check. Ако числото е по – голямо от 5 
+        изписва, че числото е валидно. 
+        Ако е по – малко от 5 изписва, че не е валидно 
+        с alert.
+    -->
+
+    <div>
+        <input type="number" id="number">
+        <button onclick="check()">Check</button>
+    </div>
+
+    <script>
+        function check() {
+            let el = document.getElementById('number');
+            let num = parseFloat(el.value);
+            if (num > 5) {
+                alert('Number is valid!');
+                return;
+            }
+            
+            alert('Number is inavalid!');
+        }
+    </script>
+</body>
+</html>

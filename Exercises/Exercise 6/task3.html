@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--Създайте див с атрибут data-id, data-name и 
+        вземете стойностите чрез getAttribute()-->
+
+    <div class="test" id="example" data-id="9999" data-name="example"></div>
+    <script>
+        let el = document.getElementById('example');
+        let dataId = el.getAttribute('data-id');
+        let dataName = el.getAttribute('data-name');
+        console.log(el.getAttribute('class'));
+        console.log(dataName);
+        console.log(dataId);
+    </script>
+</body>
+</html>

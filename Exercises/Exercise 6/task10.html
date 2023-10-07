@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        Направете калкулатор с три полета - Първо поле е за числото 
+        А, второ поле е за знака, трето поле е за числото В.
+        Създайте бутон. При натискане на бутона показва резултата.
+    -->
+    <div>
+        <label for="">Number</label>
+        <input id="numOne" type="number">
+    </div>
+    <div>
+        <label for="">Sign</label>
+        <input id="sign" type="text">
+    </div>
+    <div>
+        <label for="">Number</label>
+        <input id="numTwo" type="number">
+    </div>
+    <div>
+        <button onclick="calculate()">Result</button>
+    </div>
+    <div id="result"></div>
+
+    <script>
+        function calculate() {
+            let numOne = pasreFloat(document.getElementById('numOne').value);
+            let sign = document.getElementById('sign').value;
+            let numTwo = pasreFloat(document.getElementById('numTwo').value);
+            let resEl = document.getElementById('result');
+            let result = 0;
+
+            switch(sign) {
+                case '+':
+                    result = numOne + numTwo;
+                    break;
+                
+                case '-':
+                    result = numOne - numTwo;
+                    break;
+
+                case '*':
+                    result = numOne * numTwo;
+                    break;
+                
+                case '/':
+                    result = numOne / numTwo;
+                    break;
+                default:
+                    result = 'Невалиден знак!';
+                    break;
+            }
+            
+            if(isNan(result)) {
+                result = 'Моля въведете числа';
+            }
+            resEl.innerHTML = `Result: ${result}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        Създайте два параграфа с текст. Трябва да 
+        премахнете текста от двата 
+        параграфа и да ги обедините в един.
+    -->
+
+    <p id="p1">
+        Lorem ipsum dolor sit amet.
+    </p>
+    <p id="p2">
+        Example example example example
+    </p>
+    <button onclick="action()">Do</button>
+
+    <script>
+        let p1 = document.getElementById('p1');
+        let p2 = document.getElementById('p2');
+        //innerHTML, innerText
+
+        function action() {
+            let text = p1.innerText + p2.innerText;
+            p2.remove();
+            p1.innerHTML = text;
+
+            //p2.innerHTML = ' ' - p2 is empty, but exist
+            //p2.remove() - remove element
+        }
+    </script>
+</body>
+</html>

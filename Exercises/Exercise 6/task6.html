@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .error {
+        color: red;
+    }
+</style>
+<body>
+    <!--
+        Създайте текстово поле в което се въвежда превозно 
+        средство (колело, кола, мотор) – ако е въведено кола 
+        или мотор изписва, че е необходимо да имаме 18 години. Ако е 
+        въведено колело изписва, че трябва минимално 5 години.
+    -->
+    <div>
+        <input type="text" id="input">
+        <button onclick = "check()">Check</button>
+    </div>
+    <div id="msg"></div>
+
+    <script>
+        function check() {
+            let el = document.getElementById('input');
+            let msgEl = document.getElementById('msg');
+            let input = el.value;
+            msgEl.innerHTML = '';
+
+            if(input == 'кола' || input == 'мотор') {
+                msgEl.innerHTML = 'Необходими са 18 години';
+            } else if(input == 'колело') {
+                msgEl.innerHTML = 'Необходими са 5 години';
+            } else {
+                msgEl.innerHTML = '<span class="error">Невалидни данни</span>';
+            }
+        }
+    </script>
+</body>
+</html>

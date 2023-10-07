@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        Потребителя въвежда текст в дадено поле. 
+        Над полете трябва да се изпише дали въведения 
+        текст е число или текст, 
+        като за проверката можем да използваме isNaN.
+    -->
+    <div>
+        <div id="msg"></div>
+        <input type="text" oninput="checkIsNumber(this)">
+    </div>
+
+    <script>
+        function checkIsNumber(el) {
+            let msgEl = document.getElementById('msg');
+
+            if(isNaN(el.value)) {
+                msgEl.innerHTML = 'Не е число!';
+            }
+            else {
+                msgEl.innerHTML = 'Число е!';
+            }
+        }
+    </script>
+</body>
+</html>
