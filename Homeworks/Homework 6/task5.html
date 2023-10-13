@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: relative;
+        }
+
+        button {
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <button id="up">Up</button>
+    <button id="down">Down</button>
+    <button id="left">Left</button>
+    <button id="right">Right</button>
+
+    <script>
+        let box = document.getElementById('box');
+        let upButton = document.getElementById('up');
+        let downButton = document.getElementById('down');
+        let leftButton = document.getElementById('left');
+        let rightButton = document.getElementById('right');
+
+        let moveStep = 10; 
+        let moveStepTwo = 20;
+
+        upButton.addEventListener('click', () => {
+            box.style.top = `${box.offsetTop - moveStepTwo}px`;
+        });
+
+        downButton.addEventListener('click', () => {
+            box.style.top = `${box.offsetTop + moveStep}px`;
+        });
+
+        leftButton.addEventListener('click', () => {
+            box.style.left = `${box.offsetLeft - moveStepTwo}px`;
+        });
+
+        rightButton.addEventListener('click', () => {
+            box.style.left = `${box.offsetLeft + moveStep}px`;
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+</head>
+<body>
+    <div style="display: flex;">
+        <img id="img1" src="/images/1.jpg" alt="" style="width: 100%;"/>
+        <img id="img2" src="/images/2.jpg" alt="" style="width: 100%" />
+    </div>
+    <div>
+        <button onclick="swapImages()">Swap</button>
+    </div>
+
+    <script>
+        function swapImages() {
+            let imgOne = document.getElementById('img1');
+            let imgTwo = document.getElementById('img2');
+
+            let srcOne = img1.src;
+            let srcTwo = img2.src;
+
+            img1.src = srcTwo;
+            img2.src = srcOne;
+        }
+    </script>
+</body>
+</html>
