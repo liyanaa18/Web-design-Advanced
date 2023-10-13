@@ -1,0 +1,90 @@
+:root {
+    --main-color: #c0aa61;
+    --main-font: 'Philosopher', sans-serif;
+    --secondary-font: 'Pinyon Script', cursive;
+}
+
+html, body, h1, h2, h3, h4, h5, h6, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background: #f2f3f8;
+    height: 31rem;
+}
+
+.main-part {
+    display: flex;
+}
+
+.logo {
+    width: 25%;
+}
+
+.menu {
+    width: 75%;
+}
+
+.logo {
+    font-family: var(--main-font);
+    color: var(--main-color);
+    font-size: 2rem;
+    display: inline-block;
+}
+
+.menu {
+    margin-left: 10rem;
+}
+
+.menu ul {
+    font-family: var(--main-font);
+    margin-top: 0.5rem;
+}
+
+.menu ul li {
+    display: inline-block;
+    margin-left: 2rem;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.menu ul li a:hover {
+    color: var(--main-color);
+}
+
+.profile {
+    display: flex;
+    margin-right: 5rem;
+    width: 30%;
+    justify-content: flex-end;
+}
+
+.profile i {
+    margin-left: 2rem;
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+}
+
+
+.settings i {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    margin-right: 4rem;
+}
+
+.right-icon {
+    position: relative; /* Задаваме позиция "relative" на родителя, за да можем да позиционираме border-a */
+  }
+  
+  .right-icon::after {
+    content: ""; /* Добавяме псевдоелемент "::after" */
+    position: absolute; /* Задаваме позиция "absolute" за псевдоелемента */
+    top: 0; /* Позиционираме горния край на псевдоелемента на същата позиция като иконата */
+    right: -16px; /* Позиционираме дясната граница на псевдоелемента на 16px от иконата */
+    bottom: 0; /* Задаваме долната граница на псевдоелемента на същата позиция като иконата */
+    border-right: 2px solid red; /* Задаваме border на псевдоелемента (променете цвета и стилите според нуждите си) */
+  }
