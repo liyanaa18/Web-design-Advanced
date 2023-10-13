@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .error {
+        color: red;
+    }
+</style>
+<body>
+    <!--
+        Направете форма за регистрация с три полета: име, парола и повтори паролата.
+        Добавете валидация с JavaScript така, че при натискане на бутона регистрация да изписва грешки, ако следните правила не са изпълнени:
+        - Потребителското име да е минимално 6 символа и максимално 16 символа
+        - Паролата трябва да е минимално 6 символа и максимално 32 символа
+        - Повтори паролата трябва да е еднаква с паролата
+    -->
+
+    <div>
+        <form id="form">
+            <div>
+                <label>Username</label>
+                <input type="text" id="username"/>
+                <span class="error" id="errorUsername"></span>
+            </div>
+            
+            <div>
+                <label>Password</label>
+                <input type="password" id="password"/>
+                <span class="error" id="errorPassword"></span>
+            </div>
+
+            <div>
+                <label>Password Confirm</label>
+                <input type="password" id="passwordConfirm"/>
+                <span class="error" id="errorPasswordConfirm"></span>
+            </div>
+            <div>
+                <br/>
+                <button type="button" id="btn">Register</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        let btn = document.getElementById('btn');
+        btn.addEventListener('click', function() {
+            let username = document.getElementById('username').value;
+            let password = document.getElementById('password').value;
+            let passwordConfirm = document.getElementById('passwordConfirm').value;
+            let usernameErrorEl = document.getElementById('errorUsername');
+            let passwordErrorEl = document.getElementById('errorPassword');
+            let passwordConfirmErrorEl = document.getElementById('errorPasswordConfirm');
+            let hasErrors = false;
+            usernameErrorEl.innerHTML = '';
+            passwordErrorEl.innerHTML = '';
+            passwordConfirmErrorEl.innerHTML = '';
+            if(username.length < 6 || username.length > 16) {
+                usernameErrorEl.innerHTML = 'Invalid username length [6, 16]';
+                hasErrors = true;
+            }
+            
+            if(password.length < 6 || password.length > 32) {
+                passwordErrorEl.innerHTML = 'Invalid password length [6, 32]';
+                hasErrors = true;
+            }
+
+            if(password != passwordConfirm) {
+                passwordConfirmErrorEl.innerHTML = 'Password does not match';
+                hasErrors = true;
+            }
+
+            if(hasErrors === false) {
+                document.getElementById('form').submit();
+            }
+        });
+    </script>
+</body>
+</html>

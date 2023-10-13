@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        Създайте две текстови полета в които потребителя 
+        ще въвежда число и степен. Като използвате 
+        цикъл for покажете числото повдигнато на тази степен.
+    -->
+    <div>
+        <label>Number</label>
+        <input type="number" id="number" >
+    </div>
+    <div>
+        <label>Power</label>
+        <input type="number" id="power" >
+    </div>
+    <div>
+        <button id="btn">Calculate</button>
+    </div>
+
+    <div id="result"></div>
+
+    <script>
+        let btn = document.getElementById('btn');
+        btn.addEventListener('click', function(){
+            let number = document.getElementById('number').value;
+            let power = document.getElementById('power').value;
+            let sum = 1;
+
+            for(let i = 1; i <= power; i++) {
+                sum *= number;
+            }
+
+            document.getElementById('result').innerHTML = `Result: ${sum}`;
+        });
+    </script>
+</body>
+</html>

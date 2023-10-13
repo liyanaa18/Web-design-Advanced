@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        Създайте текстово поле в което потребителя въвежда 
+        число от 1 до 100 и бутон „Покажи“. Когато 
+        потребителя натисне бутона се визуализират четните 
+        числа от 1 до въведеното число.
+    -->
+
+    <div>
+        <input type="number" id="num"/>
+        <button id="btn">Покажи</button>
+        <div id="numbers"></div>
+    </div>
+    <script>
+        let btn = document.getElementById('btn');
+        btn.addEventListener('click', function() {
+            let el = document.getElementById('numbers');
+            el.innerHTML = '';
+            let number = document.getElementById('num').value;
+            for(let i = 0; i <= number; i+=2) {
+                el.innerHTML += i + '<br/>';
+            }
+        });
+    </script>
+</body>
+</html>

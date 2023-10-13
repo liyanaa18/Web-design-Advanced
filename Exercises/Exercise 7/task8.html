@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table, tr, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    td {
+        width: 50%;
+    }
+
+    table {
+        width: 100%;
+    }
+</style>
+<body>
+    <!--
+        Създайте табличка с няколко реда, като всеки ред има 
+        две колони – Input и оценка с думи. Когато въведем 
+        оценка от 2 до 6 отсреща се попълва автоматично 
+        оценката с думи. Табличката трябва да се генерира 
+        чрез функция createTable
+    -->
+    <div id="content">
+
+    </div>
+
+    <script>
+        function createTable(numberOfRows) {
+            let html='<table>';
+            
+            for(let i = 0; i < numberOfRows; i++) {
+                html += '<tr>';
+                html += '<td>';
+                html += `<input type="number" oninput="setGrade(${i}, this)"/>`;
+                html += '</td>';
+                html += `<td id="grade${i}"></td>`;
+                html += '</tr>';
+            }
+
+            html += '</table>';
+            document.getElementById('content').innerHTML = html;
+        }
+
+        function setGrade(el, inputEl) {
+            let td = document.getElementById(`grade${el}`);
+            let inputValue = parseFloat(inputEl.value);
+
+            switch(inputValue) {
+                case 2:
+                    td.innerHTML = "Слаб";
+                    break;
+
+                case 3:
+                    td.innerHTML = "Среден";
+                    break;
+
+                case 4:
+                    td.innerHTML = "Добър";
+                    break;
+
+                case 5:
+                    td.innerHTML = "Много добър";
+                    break;
+
+                case 6:
+                    td.innerHTML = "Отличен";
+                    break;
+
+                default:
+                    td.innerHTML = "Грешна оценка";
+                    break;
+            }
+        }
+
+        createTable(5);
+    </script>
+</body>
+</html>

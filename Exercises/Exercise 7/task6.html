@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        Създайте пет текстови полета с възможност за 
+        въвеждане на числа.
+        Потребителя въвежда числа в тези полета и след 
+        това натиска бутона “Calculate”. Като използвате 
+        querySelectorAll и цикъл намерете сумата на 
+        въведените числа.
+    -->
+    <div>
+        <input type="number" class="field">
+    </div>
+    <div>
+        <input type="number" class="field">
+    </div>
+    <div>
+        <input type="number" class="field">
+    </div>
+    <div>
+        <input type="number" class="field">
+    </div>
+    <div>
+        <input type="number" class="field">
+    </div>
+    <div>
+        <button id="btn">Calculate</button>
+    </div>
+    <script>
+        document.getElementById('btn')
+                .addEventListener('click', function() {
+                    let items = document.querySelectorAll('.field');
+                    let sum = 0;
+
+                    for(let i = 0; i < items.length; i++) {
+                        sum += parseFloat(items[i].value);
+                    }
+
+                    console.log(sum);
+                });
+    </script>
+</body>
+</html>

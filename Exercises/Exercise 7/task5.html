@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        Потребителя въвежда числа разделени с запетая в 
+        текстово поле и след това натиска бутона „Покажи“. 
+        В alert 
+        се показва най – голямото число. Използвайте split и map.
+    -->
+    <input type="text" id="numbers" />
+    <button id="btn">Show</button>
+
+    <script>
+        let btn = document.getElementById('btn');
+        btn.addEventListener('click', function() {
+            let input = document.getElementById('numbers').value;
+            let numbers = input.split(',').map(n => parseInt(n));
+
+           /* .map (function(n){
+                return parseInt(n);
+            })*/
+
+            /*for(let i = 0; i < numbers.length; i++) {
+                numbers[i] = parseInt(numbers[i]);
+            }*/
+
+            let max = numbers[0];
+            for(let i = 1; i < numbers.length; i++) {
+                if(max < numbers[i]) {
+                    max = numbers[i];
+                }
+            }
+
+            alert(max);
+        });
+    </script>
+</body>
+</html>

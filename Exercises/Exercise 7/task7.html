@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        Направете логика за добавяне и изтриване на текстово поле
+    -->
+    <div>
+        <input type="text" />
+        <button id="btn">Add</button>
+    </div>
+    <div id="content"></div>
+
+    <script>
+        let counter = 0;
+        document.getElementById('btn')
+                .addEventListener('click', function(){
+                    document.getElementById('content')
+                            .innerHTML += renderInput();
+                    counter++;
+                });
+        
+        function renderInput() {
+            let html = `<div id="fieldContainer${counter}">`
+            html += '<input type="text" />';
+            html += `<button onclick="deleteInput(${counter})">X</button>`;
+            html += '</div>';
+
+            return html;
+        }
+
+        function deleteInput(elCount) {
+            document.getElementById(`fieldContainer${elCount}`).remove()
+        }
+    </script>
+</body>
+</html>
