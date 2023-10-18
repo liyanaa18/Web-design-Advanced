@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table, tr, td, th {
+        border: 1px solid black;
+    }
+</style>
+<body>
+    <!--
+        Създайте масив с JSON обекти(user), 
+        като всеки потребител има (име, години, имейл, роля). 
+        Създайте функция, която при зареждане на 
+        страницата визуализира данните в таблица
+    -->
+    <div id="table"></div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        const usersData = [
+            {name: 'Gosho', age: 30, email: 'gosho@abv.bg', role: 'User'},
+            {name: 'Pesho', age: 25, email: 'pesho@abv.bg', role: 'Admin'},
+            {name: 'Tosho', age: 27, email: 'tosho@abv.bg', role: 'User'},
+        ];
+
+        function createTable(users) {
+            let html = '<table>';
+            html += '<tr>';
+            html += '<th>Name</th><th>Age</th>';
+            html += '<th>Email</th><th>Role</th>';
+            html += '</tr>';
+
+            for(let i = 0; i < users.length; i++) {
+                html += '<tr>';
+                html += `<td>${users[i].name}</td>`;
+                html += `<td>${users[i].age}</td>`;
+                html += `<td>${users[i].email}</td>`;
+                html += `<td>${users[i].role}</td>`;
+                html += '</tr>';
+            }
+
+            html += '</table>';
+            $('#table').html(html);
+        }
+        
+        $(function(){
+            createTable(usersData);
+        });
+        
+    </script>
+</body>
+</html>

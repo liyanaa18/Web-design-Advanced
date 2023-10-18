@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        Преобразувайте стринг към JSON и JSON към стринг
+    -->
+    <script>
+        let jsonStr = '{"name":"Gosho", "age": 30}';
+        let user = JSON.parse(jsonStr);
+        console.log(user);
+        console.log(JSON.stringify(user));
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        Вземете стойността от радио бутон, чекбокс и 
+        падащо меню с jQuery и я покажете в конзолата.
+    -->
+    <input type="text"> <br/>
+    <input type="checkbox" id="check" value="one">
+
+    <input type="radio" name="gender" value="M">M
+    <input type="radio" name="gender" value="F">F
+
+    <select>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+    </select>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        //input field
+        $('input[type=text]').val();
+        $('#check').is(':checked');
+        $('input[name=gender]:checked');
+        $('input[name=gender]:checked').val();
+    </script>
+</body>
+</html>
