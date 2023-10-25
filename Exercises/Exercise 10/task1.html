@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</head>
+<style>
+    .box {
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    ul li {
+        margin-right: 10px;
+    }
+
+    .hiding {
+        animation: hiding-animation 0.5s;
+    }
+
+    .showing {
+        animation: showing-animation 0.5s;
+    }
+
+    @keyframes showing-animation {
+        from {
+            transform: scale(0);
+        }
+
+        to {
+            transform: scale(1);
+        }
+    }
+
+    @keyframes hiding-animation {
+        from {
+            transform: scale(1);
+        }
+
+        to {
+            transform: scale(0);
+        }
+    }
+</style>
+
+<body>
+    <!--Създайте lightbox filter-->
+    <div class="container">
+        <div class="row">
+            <ul class="d-flex">
+                <li><a href='#' data-filter-category="all">All</a></li>
+                <li><a href='#' data-filter-category="games">Games</a></li>
+                <li><a href='#' data-filter-category="movies">Movies</a></li>
+                <li><a href='#' data-filter-category="websites">Websites</a></li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-4 mt-4" data-category="games">
+                <div class="box bg-primary">
+                    Games
+                </div>
+            </div>
+            <div class="col-4 mt-4" data-category="movies">
+                <div class="box bg-danger">
+                    Movies
+                </div>
+            </div>
+            <div class="col-4 mt-4" data-category="websites">
+                <div class="box bg-success">
+                    Websites
+                </div>
+            </div>
+            <div class="col-4 mt-4" data-category="games">
+                <div class="box bg-primary">
+                    Games
+                </div>
+            </div>
+            <div class="col-4 mt-4" data-category="movies">
+                <div class="box bg-danger">
+                    Movies
+                </div>
+            </div>
+            <div class="col-4 mt-4" data-category="websites">
+                <div class="box bg-success">
+                    Websites
+                </div>
+            </div>
+            <div class="col-4 mt-4" data-category="games">
+                <div class="box bg-primary">
+                    Games
+                </div>
+            </div>
+            <div class="col-4 mt-4" data-category="movies">
+                <div class="box bg-danger">
+                    Movies
+                </div>
+            </div>
+            <div class="col-4 mt-4" data-category="websites">
+                <div class="box bg-success">
+                    Websites
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <script>
+        $(function () {
+            $('[data-category]').on('click', function () {
+                const el = $(this);
+                const category = el.data('category');
+
+                const targets = $(`[data-category][data-category != ${category}]`);
+                hideElements(targets);
+            });
+
+            $('[data-filter-category]').on('click', function () {
+                    const el = $(this);
+                    const category = el.data('filter-category');
+
+                    if (category == 'all') {
+                        const targets = $('[data-category]');
+                        showElements(targets);
+                    } else {
+                        const targetsToShow = $(`[data-category=${category}]`);
+                        const targetsToHide = $(`[data-category][data-category!=${category}]`);
+
+                        hideElements(targetsToHide);
+                        showElements(targetsToShow);
+                    }
+                });
+
+            function hideElements(targets) {
+                targets.addClass('hiding');
+                setTimeout(() => {
+                    targets.hide();
+                    targets.removeClass('hiding');
+                }, 450);
+            }
+            function showElements(targets) {
+                targets.addClass('showing');
+                targets.show();
+                setTimeout(() => {
+                    targets.removeClass('showing');
+                }, 450);
+            }
+        });
+    </script>
+</body>
+</html>
