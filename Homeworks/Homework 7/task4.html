@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--
+        Създайте пет input полета и въведете числа в тях. След натискане на бутона
+        се визуализира в alert най – голямото число от всички.
+    -->
+    <input type="number" id="numberOne" />
+    <input type="number" id="numberTwo" />
+    <input type="number" id="numberThree" />
+    <input type="number" id="numberFour" />
+    <input type="number" id="numberFive" />
+    <button id="btn">MAX NUMBER</button>
+
+    <script>
+        document.getElementById('btn')
+            .addEventListener('click', function () {
+                let first = parseFloat(document.getElementById('numberOne').value);
+                let second = parseFloat(document.getElementById('numberTwo').value);
+                let third = parseFloat(document.getElementById('numberThree').value);
+                let forth = parseFloat(document.getElementById('numberFour').value);
+                let fifth = parseFloat(document.getElementById('numberFive').value);
+
+                let maxNum = first;
+
+                if (second > maxNum) {
+                    maxNum = second;
+                }
+                if (third > maxNum) {
+                    maxNum = third;
+                }
+                if (forth > maxNum) {
+                    maxNum = forth;
+                }
+                if (fifth > maxNum) {
+                    maxNum = fifth;
+                }
+
+                alert(maxNum);
+            });
+    </script>
+</body>
+
+</html>

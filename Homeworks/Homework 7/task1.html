@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+</head>
+
+<body>
+    <div>
+        <form id="form">
+            <div>
+                <label>Email</label>
+                <input type="text" id="email" required />
+                <span class="error" id="errorEmail"></span>
+            </div>
+
+            <div>
+                <label>Password</label>
+                <input type="password" id="password" required />
+                <span class="error" id="errorPassword"></span>
+            </div>
+
+            <div>
+                <br />
+                <button type="button" id="btn">Login</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        let btn = document.getElementById('btn');
+        btn.addEventListener('click', function () {
+            let email = document.getElementById('email').value.trim();
+            let password = document.getElementById('password').value.trim();
+
+            let emailErrorEl = document.getElementById('errorEmail');
+            let passwordErrorEl = document.getElementById('errorPassword');
+
+            let hasErrors = false;
+            emailErrorEl.innerHTML = '';
+            passwordErrorEl.innerHTML = '';
+
+            if (email.length > 20 || email.trim() === '') {
+                emailErrorEl.innerHTML = 'Invalid email';
+                hasErrors = true;
+            }
+
+            let emailPattern = /^[^@]+@[^@]+\.[^@]+$/;
+
+            if (!email.match(emailPattern)) {
+                emailErrorEl.innerHTML = 'Invalid email';
+                hasErrors = true;
+            }
+
+            if (password.length < 6 || password.trim() === '') {
+                passwordErrorEl.innerHTML = 'Invalid password';
+                hasErrors = true;
+            }
+
+            if (hasErrors === false) {
+                alert('Login successful');
+            }
+        });
+    </script>
+</body>
+
+</html>

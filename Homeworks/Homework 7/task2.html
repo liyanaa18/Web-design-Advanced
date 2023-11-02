@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--Изцяло с JavaScript направете 10 параграфа с числата от 1 до 10, като
+        използвате цикъл for.-->
+
+    <div id="result"></div>
+
+    <script>
+        let el = document.getElementById('result');
+
+        for(let i = 1; i <= 10; i++) {
+            el.innerHTML += '<p>' + i + '</p>';
+        }
+    </script>
+</body>
+</html>

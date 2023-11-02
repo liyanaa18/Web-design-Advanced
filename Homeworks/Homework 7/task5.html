@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        Проверете в интернет за алгоритъма на Евклид за намиране на най – голям
+        общ делител на две естествени числа и създайте JavaScript функция, която го
+        реализира.
+    -->
+    <input type="number" id="numOne" >
+    <input type="number" id="numTwo" >
+    <button id="btn">GCD</button>
+    <div id="result"></div>
+
+    <script>
+        function findGCD(a, b) {
+            while (b !== 0) {
+                let temp = b;
+                b = a % b;
+                a = temp;
+            }
+            return a;
+        }
+
+        document.getElementById('btn').addEventListener('click', function() {
+            let numOne = parseInt(document.getElementById('numOne').value);
+            let numTwo = parseInt(document.getElementById('numTwo').value);
+
+            if (!isNaN(numOne) && !isNaN(numTwo)) {
+                let gcd = findGCD(numOne, numTwo);
+                document.getElementById('result').innerHTML = `НОД е ${gcd}`;
+            } else {
+                document.getElementById('result').innerHTML = 'Моля, въведете валидни числа.';
+            }
+        });
+    </script>
+</body>
+</html>
