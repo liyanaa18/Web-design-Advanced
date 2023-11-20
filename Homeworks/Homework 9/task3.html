@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Потребителя въвежда в текстово поле JSON като стринг. От вас се изисква да прочетете
+        този стринг и да го покажете като JSON обект в конзолата. -->
+
+    <input type="text" id="jsonInput" placeholder="Въведете JSON текст">
+    <button id="btn">Прочети JSON</button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+    <script>
+        const inputElement = document.getElementById("jsonInput");
+        const parseButton = document.getElementById("btn");
+
+        parseButton.addEventListener("click", () => {
+            const jsonString = inputElement.value;
+
+            try {
+                const jsonObject = JSON.parse(jsonString);
+                console.log(jsonObject);
+            } catch (error) {
+                console.error("Грешка: Невалиден JSON формат", error);
+            }
+        });
+
+    </script>
+</body>
+
+</html>
