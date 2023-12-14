@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Task 4</title>
+</head>
+<body>
+    <div class="d-flex flex-column mt-3 ms-3 mb-3" id="container">
+        <div class="d-flex">
+            <input type="text" id="userId" class="form-control me-2" placeholder="Search user by ID" style="width: 30%;"> 
+            <button class="btn btn-primary me-2" id="search" onclick="searchUser()">Search</button>
+            <button class="btn btn-success" id="reset">Reset</button>
+        </div>
+    </div>
+
+    <div id="table"></div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+        let users = [];
+        $.ajax({
+            url: 'https://blacatzacademy.com/api/users',
+            type: 'GET',
+            success: function(data) {
+                if (data) {
+                    users = data;  
+                    createTable(users);
+                } 
+            }
+        });
+
+        function createTable(data) {
+            let html = '<table class="table table-bordered">';
+            html += '<tr><th>ID</th><th>Name</th><th>Last Name</th><th>Age</th><th>Salary</th></tr>';
+
+            if (data) {
+                data.forEach(user => {
+                    html += '<tr>';
+                    html += `<td>${user.id}</td>`;
+                    html += `<td>${user.name}</td>`;
+                    html += `<td>${user.lastName}</td>`;
+                    html += `<td>${user.age}</td>`;
+                    html += `<td>${user.salary}</td>`;
+                    html += '</tr>';
+                });
+            }
+
+            html += '</table>';
+
+            $('#table').html(html);
+        }
+
+        $('#reset').click(function(){
+            window.location.reload(true);
+        });
+
+        function searchUser() {
+            let userId = parseInt($('#userId').val()); 
+            let filteredUsers = users.filter(user => user.id === userId);
+            createTable(filteredUsers);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,487 @@
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h6,
+p,
+div {
+    padding: 0;
+    margin: 0;
+}
+
+.f-comforta {
+    font-family: 'Comfortaa', sans-serif;
+}
+
+.btn-pn {
+    border: 1px solid #fda403;
+    background: #fda403;
+    color: white;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+.bckgr {
+    background: #fda403;
+    width: 6px;
+    height: 35px;
+}
+
+.btn-send {
+    border-radius: 20px;
+    color: white;
+    background: #8a1253;
+    text-align: center;
+    border: none;
+    width: 40% !important;
+    padding: 10px;
+}
+
+.btn-add {
+    border-radius: 0px;
+    color: white;
+    background: #8a1253;
+    text-align: center;
+    border: none;
+    width: 60%;
+}
+
+.buy-btn {
+    border-radius: 20px;
+    padding: 7px 30px;
+    background: #fda403;
+}
+
+.bth-learn-img {
+    border-radius: 20px;
+    color: #e8751a;
+    border-color: #e8751a;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.bth-learn {
+    width: 40%;
+    border-radius: 20px;
+    color: #f3b686;
+    border-color: #f3b686;
+}
+
+.btn-search {
+    border-radius: 0px;
+    color: white;
+    background: #8a1253;
+    text-align: center;
+    border: none;
+    width: 100% !important;
+}
+
+.btn-search:hover {
+    background: white;
+    color: #8a1253;
+    border: 1px solid #8a1253;
+}
+
+.margin-menu {
+    margin-right: 6rem;
+}
+
+.margin-team {
+    margin-top: 6rem;
+}
+
+body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.l-r-font {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.nav-link:hover {
+    color: orangered !important;
+}
+
+.orange {
+    color: #e8751a;
+}
+
+.yellow {
+    color: #fda403;
+}
+
+.logo {
+    width: 70%;
+    max-width: 150px;
+}
+
+h1 {
+    font-size: 3.2rem;
+}
+
+h6 {
+    font-size: 0.8rem;
+}
+
+.navbar-brand {
+    width: 40%;
+}
+
+
+.menu-section ul {
+    list-style: none !important;
+}
+
+.search {
+    width: 60%;
+    box-shadow: 0 0 8px rgba(13, 13, 13, 1);
+    background: white;
+    position: absolute;
+    top: 34rem;
+    left: 19rem;
+    z-index: 1;
+}
+
+.input {
+    padding: 5px 5px;
+    width: 21rem;
+}
+
+.menu-section {
+    background: url('/files/bg.jpg');
+    height: 35rem;
+    background-position: 100% 100%;
+    background-size: cover;
+    width: 60%;
+    position: relative;
+}
+
+.team {
+    width: 60%;
+}
+
+.left-side {
+    width: 100%;
+}
+
+.pack-type {
+    height: 4.5rem;
+    background: #fda403;
+}
+
+.offer {
+    height: 18rem;
+    background: #e8751a;
+}
+
+.choose {
+    background: #fda403;
+    height: 22rem;
+}
+
+.choose-info {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header {
+    font-size: 1rem;
+}
+
+.size-one {
+    width: 600px;
+    height: 400px;
+}
+
+.size-two {
+    width: 250px;
+    height: 150px;
+}
+
+.opinions-info {
+    width: 100%;
+    height: 18rem;
+    border: 1px solid black;
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.bgr-image {
+    background: #fda403;
+    width: 100px;
+    height: 8.5rem;
+    margin-left: 8rem;
+}
+
+.pesho {
+    width: 87px;
+    height: 8.5rem;
+    margin-top: 35px;
+    margin-left: -25px;
+}
+
+.btn-container {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.prev-btn,
+.next-btn {
+    font-size: 20px;
+}
+
+.prev-btn {
+    float: left;
+    margin-left: 10px;
+}
+
+.next-btn {
+    float: right;
+    margin-right: 10px;
+}
+
+.title-bgr {
+    background: #252525;
+    width: 50px;
+    height: 5px;
+    margin-top: 12px;
+}
+
+.footer {
+    background: #fda403;
+    height: 35rem;
+}
+
+.row.footer {
+    position: relative;
+}
+
+.map-section {
+    position: relative;
+    width: 50%;
+    height: 30rem;
+    overflow: hidden;
+    order: 1;
+}
+
+.inputs {
+    order: 2;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: black;
+    opacity: 0.15;
+}
+
+.map-section iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.field {
+    border-radius: 0px;
+    border: none;
+    width: 100%;
+}
+
+.contact a {
+    text-decoration: none;
+}
+
+.line {
+    border-bottom: 1.5px solid white;
+    margin: 0 auto;
+    width: 55%;
+}
+
+.copyright {
+    text-align: center;
+    color: white;
+}
+
+@media (max-width: 576px) {
+
+    .motiv-header {
+        text-align: center;
+    }
+
+    .menu-logo-section {
+        background: #e9eefc;
+        position: relative;
+        height: 35rem;
+    }
+
+    .icon-class {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-top: 10px;
+        margin-right: 25px;
+    }
+
+    #modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modalContent {
+        background: white;
+        padding: 20px;
+        border-radius: 5px;
+        position: relative;
+    }
+
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+    .menu a {
+        text-decoration: none;
+        color: black;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .menu a:hover {
+        color:#e8751a;
+    }
+
+    .icon-class ul {
+        list-style: none;
+    }
+
+    .icon-class a i {
+        color: #e8751a;
+        text-decoration: none;
+        font-size: 3rem;
+    }
+
+    .search {
+        left: 2.5rem;
+        width: 85%;
+        top: 31rem;
+    }
+
+    .margin-team {
+        margin-top: 3rem;
+    }
+
+    .team {
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 6rem;
+    }
+
+    .bth-learn-img {
+        margin-top: 2rem;
+    }
+
+    .size-one {
+        width: 600px;
+        height: 300px;
+    }
+
+    .size-two {
+        width: 250px;
+        height: 100px;
+    }
+
+    .choose {
+        height: 46rem;
+    }
+
+    .bgr-image {
+        width: 50px;
+        height: 150px;
+        margin-left: 4rem;
+    }
+
+    .pesho {
+        margin-left: 100px;
+        margin-top: -165px;
+    }
+
+    .opinions-info {
+        width: 100%;
+        height: 40rem;
+        border: 1px solid black;
+        padding-top: 3rem;
+    }
+
+    .btn-container {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .prev-btn,
+    .next-btn {
+        font-size: 20px;
+        margin-top: 18rem;
+        margin-right: 10px;
+        border: none;
+        cursor: pointer;
+        float: none;
+    }
+
+    .map-section {
+        position: relative;
+        width: 100%;
+        height: 30rem;
+        overflow: hidden;
+    }
+
+    .footer {
+        height: 58rem;
+    }
+
+    .inputs {
+        padding-bottom: 1rem;
+    }
+
+    .field {
+        border-radius: 0px;
+        border: none;
+        width: 300%;
+    }
+
+    .btn-send {
+        width: 150% !important;
+        margin-left: 12rem;
+    }
+
+    .info {
+        text-align: center;
+    }
+
+    .cont {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+}
